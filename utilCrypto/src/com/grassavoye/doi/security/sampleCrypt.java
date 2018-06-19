@@ -17,9 +17,19 @@ public class sampleCrypt {
         String encrypt = util.encrypt(SALT, IV, PASSPHRASE, PLAIN_TEXT);
         System.out.println("'" + encrypt + "'") ; 
         
-		 
-		 
 
+	}
+	public static String encrypt(String in_IV, String in_salt, String in_passPhrase, int in_keySize, int in_iterationCount, String in_plainText) {
+		// TODO Auto-generated method stub
+		String l_return = null ; 
+		
+		CryptUtils util = new CryptUtils(in_keySize, in_iterationCount);
+        String encrypt = util.encrypt(in_salt, in_IV, in_passPhrase, in_plainText);
+        System.out.println("'" + encrypt + "'") ; 
+		l_return = encrypt ; 
+		
+		return l_return ;
+		
 	}
 
 }

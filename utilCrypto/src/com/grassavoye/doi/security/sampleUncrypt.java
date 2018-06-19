@@ -19,5 +19,17 @@ public class sampleUncrypt {
         
 		 
 	}
+	public static String decrypt(String in_IV, String in_salt, String in_passPhrase, int in_keySize, int in_iterationCount, String in_cryptedText) {
+		// TODO Auto-generated method stub
+		String l_return = null ; 
+		
+		CryptUtils util = new CryptUtils(in_keySize, in_iterationCount);
+        String uncrypt = util.decrypt(in_salt, in_IV, in_passPhrase, in_cryptedText);
+        System.out.println("'" + uncrypt + "'") ; 
+		l_return = uncrypt ; 
+		
+		return l_return ;
+		
+	}
 
 }
